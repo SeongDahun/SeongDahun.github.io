@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#1d4ed8">
+<title>성다훈 — AI 교육 · 연구 포트폴리오</title>
+<meta name="description" id="meta-desc" content="생성형 AI 교육 전문가 성다훈의 포트폴리오. 기업·기관 AI 교육, AI 에이전트 실습, 강화학습·LLM 연구와 논문, 프로젝트.">
+<meta property="og:title" content="성다훈 — AI 교육 · 연구">
+<meta property="og:description" content="기업·기관의 생성형 AI 역량을 만드는 실습 중심 교육과, 강화학습·LLM 연구.">
+<meta property="og:type" content="profile">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23122f7d'/%3E%3Ctext x='32' y='43' font-family='Helvetica,Arial' font-size='28' font-weight='700' fill='%23f6f3ea' text-anchor='middle'%3EDS%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f8f9fc;
+  --card:#ffffff;
+  --ink:#11151a;
+  --ink-2:#333c46;
+  --muted:#68717d;
+  --line:#e2e7f0;
+  --line-2:#eceff6;
+  --accent:#1d4ed8;
+  --accent-ink:#122f7d;
+  --accent-soft:#e8eeff;
+  --accent-2:#4a5f96;
+  --radius:18px;
+  --maxw:1120px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Inter",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Malgun Gothic","Noto Sans CJK KR","Roboto",system-ui,sans-serif;
+  font-size:16px;line-height:1.68;letter-spacing:-0.006em;word-break:keep-all;overflow-wrap:break-word;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+img{max-width:100%}
+a{color:inherit}
+h1,h2,h3,h4{line-height:1.22;letter-spacing:-0.025em;margin:0;font-weight:700}
+p{margin:0}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--accent);color:#fff;padding:10px 16px;z-index:100}
+.skip:focus{left:12px;top:12px}
+
+/* ---------- nav ---------- */
+.nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(248,249,252,.86);
+  backdrop-filter:saturate(180%) blur(14px);
+  -webkit-backdrop-filter:saturate(180%) blur(14px);
+  border-bottom:1px solid var(--line-2);
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:66px;gap:24px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;letter-spacing:-0.02em}
+.brand .mark{
+  width:28px;height:28px;border-radius:8px;background:var(--accent);color:#f6f3ea;
+  display:grid;place-items:center;font-size:.72rem;font-weight:800;letter-spacing:.02em;flex:0 0 auto;
+}
+.brand .sub{font-weight:500;color:var(--muted);font-size:.82rem}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none;margin:0;padding:0}
+.nav-links a{text-decoration:none;font-size:.9rem;color:var(--ink-2);font-weight:500;transition:color .18s}
+.nav-links a:hover{color:var(--accent)}
+.lang{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;background:#fff}
+.lang button{
+  border:0;background:transparent;padding:5px 12px;border-radius:999px;cursor:pointer;
+  font:inherit;font-size:.78rem;font-weight:600;color:var(--muted);letter-spacing:.03em;transition:.18s;
+}
+.lang button[aria-pressed="true"]{background:var(--accent);color:#fff}
+.lang button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* ---------- hero ---------- */
+.hero{padding:76px 0 84px;position:relative;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;inset:-10% -20% auto -20%;height:520px;
+  background:radial-gradient(60% 60% at 20% 0%,rgba(29,78,216,.10),transparent 70%),
+             radial-gradient(50% 50% at 85% 10%,rgba(56,132,255,.10),transparent 70%);
+  pointer-events:none;
+}
+.hero-grid{position:relative;display:grid;grid-template-columns:minmax(0,1.42fr) minmax(0,.78fr);gap:56px;align-items:start}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;font-size:.74rem;font-weight:700;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:22px;
+}
+.eyebrow::before{content:"";width:26px;height:1px;background:currentColor;display:inline-block}
+h1{font-size:clamp(2.45rem,5.4vw,3.75rem);font-weight:800;letter-spacing:-0.04em;line-height:1.06}
+.hero h1 .en-name{display:none}
+html[lang="en"] .hero h1 .ko-name{display:none}
+html[lang="en"] .hero h1 .en-name{display:block}
+.hero-role{margin-top:16px;font-size:1.02rem;color:var(--ink-2);font-weight:600;letter-spacing:-0.01em}
+.hero-lead{margin-top:18px;font-size:1.12rem;color:var(--muted);max-width:44ch}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.btn{
+  display:inline-flex;align-items:center;gap:9px;text-decoration:none;border-radius:999px;
+  padding:13px 22px;font-size:.92rem;font-weight:600;transition:transform .16s,box-shadow .16s,background .16s;
+}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 10px 22px -14px rgba(29,78,216,.75)}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 16px 28px -14px rgba(29,78,216,.7)}
+.btn-ghost{border:1px solid var(--line);color:var(--ink);background:#fff}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:34px}
+.chip{
+  font-size:.78rem;font-weight:500;color:var(--ink-2);background:#fff;
+  border:1px solid var(--line);border-radius:999px;padding:6px 13px;
+}
+.card-profile{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:26px;box-shadow:0 24px 48px -38px rgba(17,21,26,.5);
+}
+.mono{
+  width:100%;aspect-ratio:1.9/1;border-radius:12px;display:grid;place-items:center;
+  background:linear-gradient(145deg,#0b1c42,#122f7d 55%,#1d4ed8);
+  color:#f6f3ea;font-size:2.5rem;font-weight:800;letter-spacing:-0.04em;
+  position:relative;overflow:hidden;
+}
+.mono::after{
+  content:"";position:absolute;inset:auto -30% -60% -30%;height:120%;
+  background:radial-gradient(closest-side,rgba(255,255,255,.16),transparent);
+}
+.card-profile .name{margin-top:20px;font-size:1.06rem;font-weight:700}
+.card-profile .role{color:var(--muted);font-size:.86rem;margin-top:3px}
+.card-profile .affil{margin-top:12px;font-size:.84rem;color:var(--ink-2);line-height:1.55}
+.stats{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px 14px;margin-top:22px;border-top:1px solid var(--line-2);padding-top:18px}
+.stat{grid-column:span 2;min-width:0}
+.stat.lead{grid-column:span 3}
+.stat.sub{border-top:1px solid var(--line-2);padding-top:14px}
+.stat b{display:block;font-size:1.28rem;font-weight:800;letter-spacing:-0.03em;line-height:1.1;white-space:nowrap}
+.stat.lead b{font-size:1.58rem;color:var(--accent-ink)}
+.stat span{display:block;font-size:.72rem;color:var(--muted);line-height:1.35;margin-top:4px}
+.card-note{margin-top:16px;font-size:.72rem;color:var(--muted);letter-spacing:.02em}
+
+/* ---------- sections ---------- */
+section{padding:84px 0;border-top:1px solid var(--line-2)}
+.sec-head{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:baseline;margin-bottom:42px}
+.sec-num{font-size:.76rem;font-weight:700;letter-spacing:.14em;color:var(--accent);padding-top:8px}
+.sec-title{font-size:clamp(1.6rem,3vw,2.15rem);letter-spacing:-0.035em}
+.sec-desc{margin-top:10px;color:var(--muted);max-width:62ch;font-size:.98rem}
+.sec-head .num-col{min-width:44px}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:56px}
+.prose p+p{margin-top:16px}
+.prose{color:var(--ink-2);font-size:1.02rem}
+.edu-list{list-style:none;margin:0;padding:0;border-left:2px solid var(--line);padding-left:22px}
+.edu-list li{position:relative;padding-bottom:22px}
+.edu-list li:last-child{padding-bottom:0}
+.edu-list li::before{
+  content:"";position:absolute;left:-27px;top:8px;width:8px;height:8px;border-radius:50%;
+  background:var(--accent);box-shadow:0 0 0 4px var(--bg);
+}
+.edu-list b{display:block;font-size:.98rem;font-weight:700}
+.edu-list .meta{display:block;font-size:.84rem;color:var(--muted);margin-top:3px}
+.about-side h3{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:18px;font-weight:700}
+
+/* teaching */
+.teach-summary{
+  display:flex;flex-wrap:wrap;align-items:baseline;gap:12px 32px;
+  background:linear-gradient(120deg,#f3f7ff,#e9effd);border:1px solid #dbe4fb;
+  border-radius:14px;padding:16px 22px;margin-bottom:26px;
+}
+.teach-summary .ts{display:flex;align-items:baseline;gap:9px}
+.teach-summary b{font-size:1.14rem;font-weight:800;letter-spacing:-0.025em;color:var(--accent-ink)}
+.teach-summary .ts span{font-size:.8rem;color:var(--ink-2)}
+.teach-summary .ts-note{margin-left:auto;font-size:.72rem;color:var(--muted);letter-spacing:.01em}
+.role-legend{display:flex;gap:18px;flex-wrap:wrap;font-size:.78rem;color:var(--muted);margin-bottom:26px}
+.role-legend .dot{width:7px;height:7px;border-radius:50%;display:inline-block;margin-right:6px;vertical-align:1px}
+.t-list{border-top:1px solid var(--line)}
+.t-row{
+  display:grid;grid-template-columns:118px minmax(0,1fr) auto;gap:24px;
+  padding:17px 4px;border-bottom:1px solid var(--line-2);align-items:start;transition:background .16s;
+}
+.t-row:hover{background:#fff}
+.t-period{font-size:.8rem;color:var(--muted);font-variant-numeric:tabular-nums;letter-spacing:.01em;padding-top:3px;line-height:1.5}
+.t-org{font-size:1rem;font-weight:700;display:block}
+.t-course{display:block;font-size:.92rem;color:var(--ink-2);margin-top:2px}
+.t-target{display:block;font-size:.8rem;color:var(--muted);margin-top:5px}
+.badge{
+  font-size:.72rem;font-weight:700;letter-spacing:.02em;border-radius:999px;padding:4px 11px;
+  white-space:nowrap;margin-top:2px;
+}
+.badge--lead{background:var(--accent);color:#fff}
+.badge--coach{background:var(--accent-soft);color:var(--accent-ink)}
+.badge--support{background:#eef1f8;color:var(--accent-2)}
+.role-legend .d-lead{background:var(--accent)}
+.role-legend .d-coach{background:#8fa6db}
+.subgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px;margin-top:56px}
+.subgrid h3{font-size:1.02rem;margin-bottom:16px}
+.mini{list-style:none;margin:0;padding:0}
+.mini li{padding:12px 0;border-top:1px solid var(--line-2);font-size:.92rem;color:var(--ink-2)}
+.mini li b{font-weight:600;color:var(--ink);display:block;font-size:.93rem}
+.mini li span{display:block;font-size:.8rem;color:var(--muted);margin-top:2px}
+
+/* method cards */
+.methods{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:18px;margin-top:52px}
+.method{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px;transition:transform .18s,box-shadow .18s}
+.method:hover{transform:translateY(-2px);box-shadow:0 20px 34px -30px rgba(17,21,26,.55)}
+.method .n{font-size:.72rem;font-weight:800;letter-spacing:.12em;color:var(--accent-2)}
+.method h4{margin-top:12px;font-size:1rem}
+.method p{margin-top:8px;font-size:.88rem;color:var(--muted)}
+.quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:26px}
+.quote{border-left:3px solid var(--accent);padding:6px 0 6px 20px}
+.quote p{font-size:.98rem;color:var(--ink-2);font-style:italic}
+.quote cite{display:block;margin-top:8px;font-size:.76rem;color:var(--muted);font-style:normal}
+
+/* research */
+.research-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px}
+.interest-list{display:flex;flex-wrap:wrap;gap:9px;margin-top:6px}
+.interest-list span{font-size:.84rem;border:1px solid var(--line);background:#fff;border-radius:8px;padding:8px 13px;color:var(--ink-2)}
+.papers{margin-top:44px}
+.papers-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.paper{
+  background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 22px;
+  display:flex;flex-direction:column;gap:9px;transition:border-color .18s,transform .18s;
+}
+.paper:hover{border-color:#bcccee;transform:translateY(-1px)}
+.paper.featured{border-color:var(--accent);box-shadow:0 18px 34px -32px rgba(29,78,216,.85)}
+.p-meta{display:flex;justify-content:space-between;gap:12px;font-size:.72rem;color:var(--muted);letter-spacing:.03em}
+.p-venue{font-weight:700;color:var(--accent)}
+.p-title{font-size:.96rem;font-weight:600;line-height:1.45;letter-spacing:-0.015em}
+.p-vol{font-size:.76rem;color:var(--muted)}
+.p-link{font-size:.78rem;font-weight:600;color:var(--accent);text-decoration:none;margin-top:auto;word-break:break-all}
+.p-link:hover{text-decoration:underline}
+details.all{margin-top:26px;border:1px solid var(--line);border-radius:14px;background:#fff;overflow:hidden}
+details.all summary{
+  cursor:pointer;padding:18px 22px;font-weight:600;font-size:.92rem;list-style:none;
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+}
+details.all summary::-webkit-details-marker{display:none}
+details.all summary::after{content:"+";font-size:1.15rem;color:var(--muted);font-weight:400}
+details.all[open] summary::after{content:"–"}
+details.all[open] summary{border-bottom:1px solid var(--line-2)}
+.all-body{padding:8px 22px 20px}
+.all-item{display:grid;grid-template-columns:78px minmax(0,1fr);gap:16px;padding:14px 0;border-bottom:1px solid var(--line-2)}
+.all-item:last-child{border-bottom:0}
+.all-item .yr{font-size:.76rem;color:var(--muted);font-variant-numeric:tabular-nums;padding-top:2px}
+.all-item .tt{font-size:.88rem;font-weight:600;line-height:1.45}
+.all-item .vv{font-size:.75rem;color:var(--muted);margin-top:3px}
+.all-item a{color:var(--accent);text-decoration:none;font-size:.75rem;font-weight:600}
+.all-item a:hover{text-decoration:underline}
+.patent{
+  margin-top:22px;border:1px dashed #c2d0ef;background:#f4f7fe;border-radius:14px;padding:20px 22px;
+  display:flex;gap:16px;align-items:flex-start;
+}
+.patent .ic{font-size:1.1rem;line-height:1.4;color:var(--accent)}
+.patent b{display:block;font-size:.95rem}
+.patent span{display:block;font-size:.82rem;color:var(--muted);margin-top:3px}
+
+/* projects */
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px}
+.project{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.project:hover{transform:translateY(-2px);box-shadow:0 24px 40px -34px rgba(17,21,26,.5)}
+.project .tag{font-size:.72rem;font-weight:700;letter-spacing:.12em;color:var(--accent-2);text-transform:uppercase}
+.project h3{margin-top:10px;font-size:1.14rem}
+.project p{margin-top:10px;font-size:.9rem;color:var(--muted);flex:1}
+.project .plinks{display:flex;flex-wrap:wrap;gap:14px;margin-top:18px}
+.project .plinks a{font-size:.82rem;font-weight:600;color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(29,78,216,.28);padding-bottom:1px}
+.project .plinks a:hover{border-color:var(--accent)}
+.awards{margin-top:56px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px}
+.award-list{list-style:none;margin:0;padding:0}
+.award-list li{display:grid;grid-template-columns:64px minmax(0,1fr);gap:14px;padding:13px 0;border-top:1px solid var(--line-2);font-size:.9rem;color:var(--ink-2)}
+.award-list li .y{font-size:.76rem;color:var(--muted);font-variant-numeric:tabular-nums;padding-top:2px}
+.award-list li b{font-weight:600;color:var(--ink)}
+
+/* skills & contact */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px}
+.skill h4{font-size:.76rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.skill ul{list-style:none;margin:12px 0 0;padding:0}
+.skill li{font-size:.88rem;color:var(--ink-2);padding:5px 0;border-bottom:1px solid var(--line-2)}
+.contact{
+  margin-top:64px;background:linear-gradient(150deg,#081833,#0f2a63 45%,#17398c);
+  color:#f4f1e8;border-radius:22px;padding:52px 48px;
+  display:grid;grid-template-columns:minmax(0,1fr) auto;gap:36px;align-items:center;
+}
+.contact h2{font-size:clamp(1.5rem,2.6vw,2rem);letter-spacing:-0.03em}
+.contact p{margin-top:12px;color:rgba(244,241,232,.72);font-size:.95rem;max-width:46ch}
+.contact .links{display:flex;flex-direction:column;gap:10px;min-width:250px}
+.contact a.c-link{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;text-decoration:none;
+  border:1px solid rgba(244,241,232,.22);border-radius:12px;padding:13px 16px;font-size:.88rem;
+  color:#f4f1e8;transition:.18s;background:rgba(255,255,255,.03);
+}
+.contact a.c-link:hover{background:rgba(255,255,255,.1);border-color:rgba(244,241,232,.45)}
+.contact a.c-link span.lbl{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(244,241,232,.55);display:block;margin-bottom:2px}
+
+footer{padding:38px 0 56px;color:var(--muted);font-size:.78rem}
+.foot-inner{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1px solid var(--line-2);padding-top:24px}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+  .btn,.method,.paper,.project{transition:none}
+}
+
+/* ---------- responsive ---------- */
+@media (max-width:980px){
+  .nav-links{gap:20px}
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .card-profile{max-width:420px}
+  .about-grid,.research-grid,.awards{grid-template-columns:1fr;gap:38px}
+  .subgrid{grid-template-columns:1fr;gap:30px}
+  .contact{grid-template-columns:1fr;padding:38px 30px}
+  .contact .links{min-width:0}
+}
+@media (max-width:760px){
+  .wrap{padding:0 20px}
+  .nav-links{display:none}
+  .brand{white-space:nowrap}
+  .brand .sub{display:none}
+  .hero{padding:52px 0 64px}
+  section{padding:62px 0}
+  .sec-head{grid-template-columns:1fr;gap:8px;margin-bottom:30px}
+  .sec-num{padding-top:0}
+  .t-row{grid-template-columns:1fr;gap:6px;padding:15px 2px}
+  .t-period{font-size:.76rem;padding-top:0}
+  .badge{justify-self:start;margin-top:6px}
+  .all-item{grid-template-columns:64px minmax(0,1fr);gap:12px}
+  .teach-summary{gap:10px 20px;padding:15px 18px}
+  .teach-summary .ts-note{margin-left:0;flex-basis:100%}
+  .hero-actions .btn{flex:1 1 auto;justify-content:center}
+}
+@media print{
+  .nav,.hero-actions,.contact{box-shadow:none}
+  section{page-break-inside:avoid}
+  body{background:#fff}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main" data-ko="본문으로 건너뛰기" data-en="Skip to content">본문으로 건너뛰기</a>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top">
+      <span class="mark">DS</span>
+      <span data-ko="성다훈" data-en="Da-Hun Seong">성다훈</span>
+      <span class="sub" data-ko="AI 교육 · 연구" data-en="AI Education · Research">AI 교육 · 연구</span>
+    </a>
+    <nav aria-label="Sections">
+      <ul class="nav-links">
+        <li><a href="#about" data-ko="소개" data-en="About">소개</a></li>
+        <li><a href="#teaching" data-ko="교육" data-en="Teaching">교육</a></li>
+        <li><a href="#research" data-ko="연구" data-en="Research">연구</a></li>
+        <li><a href="#projects" data-ko="프로젝트" data-en="Projects">프로젝트</a></li>
+        <li><a href="#contact" data-ko="연락" data-en="Contact">연락</a></li>
+      </ul>
+    </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button id="btn-ko" type="button" aria-pressed="true" onclick="setLang('ko')">KR</button>
+      <button id="btn-en" type="button" aria-pressed="false" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<a id="top"></a>
+
+<!-- ================= HERO + ABOUT ================= -->
+<section class="hero" id="about" style="border-top:0">
+  <div class="wrap hero-grid">
+    <div class="reveal">
+      <div class="eyebrow" data-ko="AI Education · Research" data-en="AI Education · Research">AI Education · Research</div>
+      <h1>
+        <span class="ko-name">성다훈</span>
+        <span class="en-name">Da-Hun Seong</span>
+      </h1>
+      <p class="hero-role" data-ko="생성형 AI 교육 전문가 · 기업 AI 교육 강사 · AI 교육 연구자"
+         data-en="Generative AI Education Specialist · Corporate AI Instructor · AI Education Researcher">생성형 AI 교육 전문가 · 기업 AI 교육 강사 · AI 교육 연구자</p>
+      <p class="hero-lead" data-ko="기업과 기관이 스스로 AI를 다룰 수 있게 만드는, 실습 중심의 생성형 AI·AI 에이전트 교육을 설계하고 운영합니다."
+         data-en="I design and run hands-on generative AI and AI agent training that helps organizations use AI on their own terms.">기업과 기관이 스스로 AI를 다룰 수 있게 만드는, 실습 중심의 생성형 AI·AI 에이전트 교육을 설계하고 운영합니다.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#contact">
+          <span data-ko="교육·협업 문의" data-en="Work with me">교육·협업 문의</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/dahunseong0324" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <div class="chips">
+        <span class="chip" data-ko="기업 대상 생성형 AI 교육" data-en="Corporate generative AI training">기업 대상 생성형 AI 교육</span>
+        <span class="chip" data-ko="AI 에이전트 실습 교육" data-en="AI agent hands-on workshops">AI 에이전트 실습 교육</span>
+        <span class="chip" data-ko="교육과정·교안 설계" data-en="Curriculum &amp; material design">교육과정·교안 설계</span>
+        <span class="chip" data-ko="사전 진단 기반 맞춤형 커리큘럼" data-en="Needs-based custom curricula">사전 진단 기반 맞춤형 커리큘럼</span>
+        <span class="chip" data-ko="Claude Code · Skills · MCP" data-en="Claude Code · Skills · MCP">Claude Code · Skills · MCP</span>
+        <span class="chip" data-ko="프롬프트 엔지니어링" data-en="Prompt engineering">프롬프트 엔지니어링</span>
+      </div>
+    </div>
+
+    <aside class="card-profile reveal" aria-label="Profile summary">
+      <div class="mono" aria-hidden="true">DS</div>
+      <div class="name" data-ko="성다훈" data-en="Da-Hun Seong">성다훈</div>
+      <div class="role" data-ko="AI 교육 · 강화학습 / LLM 연구" data-en="AI education · RL / LLM research">AI 교육 · 강화학습 / LLM 연구</div>
+      <div class="affil" data-ko="숙명여자대학교 IT공학과 석·박사통합과정" data-en="Integrated MS/PhD, Dept. of IT Engineering, Sookmyung Women's University">숙명여자대학교 IT공학과 석·박사통합과정</div>
+      <div class="stats">
+        <div class="stat lead"><b data-ko="290시간+" data-en="290+">290시간+</b><span data-ko="누적 강의 시간" data-en="hours of teaching">누적 강의 시간</span></div>
+        <div class="stat lead"><b data-ko="1,600명+" data-en="1,600+">1,600명+</b><span data-ko="누적 만난 교육생" data-en="learners taught">누적 만난 교육생</span></div>
+        <div class="stat sub"><b>17</b><span data-ko="기업·기관 AI 교육 (2025–2026)" data-en="organizations trained">기업·기관 AI 교육 (2025–2026)</span></div>
+        <div class="stat sub"><b>15</b><span data-ko="출판 논문" data-en="published papers">출판 논문</span></div>
+        <div class="stat sub"><b>1</b><span data-ko="국내 특허 출원" data-en="patent filed">국내 특허 출원</span></div>
+      </div>
+      <div class="card-note" data-ko="Seoul, Korea · 2026.11 기준 · 완료된 교육 합산" data-en="Seoul, Korea · as of Nov 2026 · completed sessions">Seoul, Korea · 2026.11 기준 · 완료된 교육 합산</div>
+    </aside>
+  </div>
+</section>
+
+<section id="about-body" style="border-top:1px solid var(--line-2)">
+  <div class="wrap about-grid">
+    <div class="prose reveal">
+      <h2 class="sec-title" style="margin-bottom:22px" data-ko="교육과 기술 사이에서" data-en="Between education and engineering">교육과 기술 사이에서</h2>
+      <p data-ko="교육학과 IT공학을 기반으로, 기업과 대학에서 생성형 AI 및 디지털 역량 교육을 기획·운영해 왔습니다. 2025~2026년에는 삼성 계열사(임원·HR·물산·화재·E&amp;A·전자 DS), 산업통상부, 농협중앙회, 원익홀딩스, 신세계, 롯데면세점, 동양생명, 메리츠화재 등 17개 기업·기관의 생성형 AI·AI 에이전트 교육에 강사·실습코치로 참여했습니다."
+         data-en="With a background spanning education and IT engineering, I have planned and delivered generative AI and digital capability programs for companies and universities. In 2025–2026 I worked as instructor and hands-on coach in generative AI and AI agent training for 17 companies and institutions, including Samsung affiliates (executives, HR, C&amp;T, Fire &amp; Marine, E&amp;A, Electronics DS), the Ministry of Trade, Industry and Energy, the National Agricultural Cooperative Federation, Wonik Holdings, Shinsegae, Lotte Duty Free, Tongyang Life and Meritz Fire &amp; Marine.">교육학과 IT공학을 기반으로, 기업과 대학에서 생성형 AI 및 디지털 역량 교육을 기획·운영해 왔습니다. 2025~2026년에는 삼성 계열사(임원·HR·물산·화재·E&amp;A·전자 DS), 산업통상부, 농협중앙회, 원익홀딩스, 신세계, 롯데면세점, 동양생명, 메리츠화재 등 17개 기업·기관의 생성형 AI·AI 에이전트 교육에 강사·실습코치로 참여했습니다.</p>
+      <p data-ko="원익홀딩스 기획조정실 교육에서는 사전 설문과 직급별 이원화 설계로 4시간 심화 커리큘럼을 직접 구성·진행했습니다. 현재는 숙명여자대학교 IT공학과 석·박사통합과정에서 강화학습과 LLM을 연구하며, 교육 현장에서 마주친 질문을 연구 주제로 가져오고 연구에서 얻은 기준을 다시 교육에 돌려놓습니다."
+         data-en="For Wonik Holdings' planning office I designed and led a four-hour advanced curriculum myself, split by seniority after a pre-training survey. I am now in the integrated MS/PhD program in IT Engineering at Sookmyung Women's University, researching reinforcement learning and LLMs — bringing questions from the classroom into research, and research standards back into the classroom.">원익홀딩스 기획조정실 교육에서는 사전 설문과 직급별 이원화 설계로 4시간 심화 커리큘럼을 직접 구성·진행했습니다. 현재는 숙명여자대학교 IT공학과 석·박사통합과정에서 강화학습과 LLM을 연구하며, 교육 현장에서 마주친 질문을 연구 주제로 가져오고 연구에서 얻은 기준을 다시 교육에 돌려놓습니다.</p>
+    </div>
+    <div class="about-side reveal">
+      <h3 data-ko="학력" data-en="Education">학력</h3>
+      <ul class="edu-list">
+        <li>
+          <b data-ko="숙명여자대학교 일반대학원 IT공학과 석·박사통합과정" data-en="Sookmyung Women's University, Integrated MS/PhD in IT Engineering">숙명여자대학교 일반대학원 IT공학과 석·박사통합과정</b>
+          <span class="meta" data-ko="2023.03 ~ · GPA 4.48 / 4.50" data-en="Mar 2023 – present · GPA 4.48 / 4.50">2023.03 ~ · GPA 4.48 / 4.50</span>
+        </li>
+        <li>
+          <b data-ko="숙명여자대학교 교육학부(문학사)·IT공학과(공학사) 복수전공" data-en="Sookmyung Women's University, B.A. in Education &amp; B.S. in IT Engineering (double major)">숙명여자대학교 교육학부(문학사)·IT공학과(공학사) 복수전공</b>
+          <span class="meta" data-ko="2019.03 ~ 2023.02 · GPA 4.17 / 4.50 · 졸업성적우수상" data-en="Mar 2019 – Feb 2023 · GPA 4.17 / 4.50 · Graduation Honors">2019.03 ~ 2023.02 · GPA 4.17 / 4.50 · 졸업성적우수상</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TEACHING ================= -->
+<section id="teaching">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="num-col sec-num">01</div>
+      <div>
+        <h2 class="sec-title" data-ko="기업·기관 AI 교육" data-en="Teaching · Corporate &amp; Institutional AI Training">기업·기관 AI 교육</h2>
+        <p class="sec-desc" data-ko="임원 세션부터 실무자 실습까지, 조직의 수준과 직무에 맞춰 설계한 생성형 AI·AI 에이전트 교육입니다. 과정명은 기밀 유지를 위해 주제 수준으로 표기했습니다."
+           data-en="Generative AI and AI agent programs designed for each organization's level and role, from executive sessions to hands-on practitioner workshops. Course names are shown at topic level to respect client confidentiality.">임원 세션부터 실무자 실습까지, 조직의 수준과 직무에 맞춰 설계한 생성형 AI·AI 에이전트 교육입니다. 과정명은 기밀 유지를 위해 주제 수준으로 표기했습니다.</p>
+      </div>
+    </div>
+
+    <div class="teach-summary reveal">
+      <div class="ts"><b data-ko="290시간+" data-en="290+">290시간+</b><span data-ko="누적 강의 시간" data-en="teaching hours">누적 강의 시간</span></div>
+      <div class="ts"><b data-ko="1,600명+" data-en="1,600+">1,600명+</b><span data-ko="누적 만난 교육생" data-en="learners met">누적 만난 교육생</span></div>
+      <div class="ts"><b data-ko="17개" data-en="17">17개</b><span data-ko="기업·기관" data-en="organizations">기업·기관</span></div>
+      <div class="ts-note" data-ko="완료된 교육 기준 · 진행 중인 과정은 계속 누적됩니다" data-en="Based on completed sessions; ongoing programs keep adding">완료된 교육 기준 · 진행 중인 과정은 계속 누적됩니다</div>
+    </div>
+
+    <div class="role-legend reveal">
+      <span><i class="dot d-lead"></i><span data-ko="강사" data-en="Instructor">강사</span></span>
+      <span><i class="dot d-coach"></i><span data-ko="실습코치" data-en="Hands-on coach">실습코치</span></span>
+    </div>
+
+    <div class="t-list reveal">
+
+      <div class="t-row">
+        <div class="t-period">2026.11</div>
+        <div class="t-main">
+          <span class="t-org" data-ko="공무원연금공단" data-en="Government Employees Pension Service">공무원연금공단</span>
+          <span class="t-course" data-ko="생성형 AI 실무 활용" data-en="Generative AI in Practice">생성형 AI 실무 활용</span>
+          <span class="t-target" data-ko="38명 · 2시간" data-en="38 participants · 2 hrs">38명 · 2시간</span>
+        </div>
+        <span class="badge badge--lead" data-ko="강사" data-en="Instructor">강사</span>
+      </div>
+
+      <div class="t-row">
+        <div class="t-period">2026.11.19</div>
+        <div class="t-main">
+          <span class="t-org" data-ko="연세IT미래교육원 (CTK)" data-en="Yonsei IT Future Education Center (CTK)">연세IT미래교육원 (CTK)</span>
+          <span class="t-course" data-ko="Claude 기반 업무 자동화 실습" data-en="Hands-on Work Automation with Claude">Claude 기반 업무 자동화 실습</span>
+          <span class="t-target" data-ko="팀장 이상 36명 · 7시간" data-en="Team leads and above (36) · 7 hrs">팀장 이상 36명 · 7시간</span>
+        </div>
+        <span class="badge badge--coach" data-ko="실습코치" data-en="Coach">실습코치</span>
+      </div>
+
+      <div class="t-row">
+        <div class="t-period">2026.11.13</div>
+        <div class="t-main">
+          <span class="t-org" data-ko="신한대학교" data-en="Shinhan University">신한대학교</span>
+          <span class="t-course" data-ko="AI 에이전트·바이브코딩 실습" data-en="AI Agents &amp; Vibe Coding Workshop">AI 에이전트·바이브코딩 실습</span>
+          <span class="t-target" data-ko="학부생 40명 · 7시간" data-en="40 undergraduates · 7 hrs">학부생 40명 · 7시간</span>
+        </div>
+        <span class="badge badge--lead" data-ko="강사" data-en="Instructor">강사</span>
+      </div>
+
+      <div class="t-row">
+        <div class="t-period">2026.11</div>
+        <div class="t-main">
+          <span class="t-org" data-ko="범농협 부·실장급" data-en="NACF group, department heads">범농협 부·실장급</span>
+          <span class="t-course" data-ko="생성형 AI 리더 세션" data-en="Generative AI for Leaders">생성형 AI 리더 세션</span>
+          <span class="t-target" data-ko="180명 · 3시간" data-en="180 participants · 3 hrs">180명 · 3시간</span>
+        </div>
+        <span class="badge badge--coach" data-ko="실습코치" data-en="Coach">실습코치</span>
+      </div>
+
+      <div class="t-row">
+        <div class="t-period">2026.10 – 11</div>
+        <div class="t-main">
+          <span class="t-org" data-ko="동양생명 (팀장·영업실무자)" data-en="Tongyang Life Insurance (team leads &amp; sales staff)">동양생명 (팀장·영업실무자)</span>
+          <span class="t-course" data-ko="AI 에이전트 기반 업무 자동화 코칭" data-en="AI Agent Workflow Coaching">AI 에이전트 기반 업무 자동화 코칭</span>
+          <span class="t-target" data-ko="45명 + 41명 · 20시간" data-en="45 + 41 participants · 20 hrs">45명 + 41명 · 20시간</span>
+        </div>
+        <span class="badge badge--coach" data-ko="실습코치" data-en="Coach">실습코치</span>
+      </div>
+
+      <div class="t-row">
+        <div class="t-period">2026.10.22</div>
+        <div class="t-main">
+          <span class="t-org" data-ko="신세계 (인사·총무·법무)" data-en="Shinsegae (HR, general affairs, legal)">신세계 (인사·총무·법무)</span>
+          <span class="t-course" data-ko="생성형 AI 실무 활용" data-en="Generative AI in Practice">생성형 AI 실무 활용</span>
+          <span class="t-target" data-ko="30명 · 4시간" data-en="30 participants · 4 hrs">30명 · 4시간</span>
+        </div>
+        <span class="badge badge--coach" data-ko="실습코치" data-en="Coach">실습코치</span>
+      </div>
+
+      <div class="t-row">
+        <div class="t-period">2026.10.20</div>
+        <div class="t-main">
+          <span class="t-org" data-ko="롯데면세점" data-en="Lotte Duty Free">롯데면세점</span>
+          <span class="t-course" data-ko="생성형 AI 실무 활용" data-en="Generative AI in Practice">생성형 AI 실무 활용</span>
+          <span class="t-target" data-ko="13명 · 3시간" data-en="13 participants · 3 hrs">13명 · 3시간</span>
+        </div>
+        <span class="badge badge--coach" data-ko="실습코치" data-en="Coach">실습코치</span>
+      </div>
+
+      <div class="t-row">
+        <div class="t-period">2026.10</div>
+        <div class="t-main">
+          <span class="t-org" data-ko="산업통상부" data-en="Ministry of Trade, Industry and Energy">산업통상부</span>
+          <span class="t-course" data-ko="공공행정 AI 활용 실습" data-en="AI Practice for Public Administration">공공행정 AI 활용 실습</span>
+          <span class="t-target" data-ko="회당 30명 · 8시간 · 2회" data-en="30 per session · 8 hrs · twice">회당 30명 · 8시간 · 2회</span>
+        </div>
+        <span class="badge badge--lead" data-ko="강사" data-en="Instructor">강사</span>
+      </div>
+
+      <div class="t-row">
+        <div class="t-period">2026.10 – 12</div>
+        <div class="t-main">
+          <span class="t-org" data-ko="삼성E&amp;A (리더 과정)" data-en="Samsung E&amp;A (leadership program)">삼성E&amp;A (리더 과정)</span>
+          <span class="t-course" data-ko="생성형 AI 기반 업무 자동화 실습" data-en="Hands-on Work Automation with Generative AI">생성형 AI 기반 업무 자동화 실습</span>
+          <span class="t-target" data-ko="차수별 8~31명 · 회당 7시간" data-en="8–31 per cohort · 7 hrs per session">차수별 8~31명 · 회당 7시간</span>
+        </div>
+        <span class="badge badge--coach" data-ko="실습코치" data-en="Coach">실습코치</span>
+      </div>
+
+      <div class="t-row">
+        <div class="t-period">2026.10 – 2027.03</div>
+        <div class="t-main">
+          <span class="t-org" data-ko="삼성전자 DS (보직장)" data-en="Samsung Electronics DS (office heads)">삼성전자 DS (보직장)</span>
+          <span class="t-course" data-ko="AI 에이전트·바이브코딩 코칭" data-en="AI Agents &amp; Vibe Coding Coaching">AI 에이전트·바이브코딩 코칭</span>
+          <span class="t-target" data-ko="8시간 × 25회차 · 200시간" data-en="8 hrs × 25 sessions · 200 hrs">8시간 × 25회차 · 200시간</span>
+        </div>
+        <span class="badge badge--coach" data-ko="실습코치" data-en="Coach">실습코치</span>
+      </div>
+
+      <div class="t-row">
+        <div class="t-period">2026.09.30</div>
+        <div class="t-main">
+          <span class="t-org" data-ko="원익홀딩스 (기획조정실)" data-en="Wonik Holdings (planning &amp; coordination office)">원익홀딩스 (기획조정실)</span>
+          <span class="t-course" data-ko="생성형 AI 기반 업무 자동화 — 직급별 심화" data-en="Work Automation with Generative AI — seniority-tiered">생성형 AI 기반 업무 자동화 — 직급별 심화</span>
+          <span class="t-target" data-ko="40명 (부서장 11) · 4시간" data-en="40 participants (11 dept. heads) · 4 hrs">40명 (부서장 11) · 4시간</span>
+        </div>
+        <span class="badge badge--lead" data-ko="강사" data-en="Instructor">강사</span>
+      </div>
+
+      <div class="t-row">
+        <div class="t-period">2026.09 – 10</div>
+        <div class="t-main">
+          <span class="t-org" data-ko="삼성화재" data-en="Samsung Fire &amp; Marine Insurance">삼성화재</span>
+          <span class="t-course" data-ko="생성형 AI 기반 업무 자동화 실습" data-en="Hands-on Work Automation with Generative AI">생성형 AI 기반 업무 자동화 실습</span>
+          <span class="t-target" data-ko="실무자 40명 · 5회 22.5시간" data-en="40 practitioners · 5 sessions, 22.5 hrs">실무자 40명 · 5회 22.5시간</span>
+        </div>
+        <span class="badge badge--coach" data-ko="실습코치" data-en="Coach">실습코치</span>
+      </div>
+
+      <div class="t-row">
+        <div class="t-period">2026.09</div>
+        <div class="t-main">
+          <span class="t-org" data-ko="농협중앙회 (최고경영진)" data-en="National Agricultural Cooperative Federation (top executives)">농협중앙회 (최고경영진)</span>
+          <span class="t-course" data-ko="생성형 AI 경영진 세션" data-en="Generative AI Executive Session">생성형 AI 경영진 세션</span>
+          <span class="t-target" data-ko="30명 · 4시간 · 2회" data-en="30 executives · 4 hrs · twice">30명 · 4시간 · 2회</span>
+        </div>
+        <span class="badge badge--coach" data-ko="실습코치" data-en="Coach">실습코치</span>
+      </div>
+
+      <div class="t-row">
+        <div class="t-period">2026.08 – 09</div>
+        <div class="t-main">
+          <span class="t-org" data-ko="삼성 HR" data-en="Samsung HR">삼성 HR</span>
+          <span class="t-course" data-ko="생성형 AI 실무 활용" data-en="Generative AI in Practice">생성형 AI 실무 활용</span>
+          <span class="t-target" data-ko="실무자 40명 · 6시간" data-en="40 practitioners · 6 hrs">실무자 40명 · 6시간</span>
+        </div>
+        <span class="badge badge--coach" data-ko="실습코치" data-en="Coach">실습코치</span>
+      </div>
+
+      <div class="t-row">
+        <div class="t-period">2026.08 – 09</div>
+        <div class="t-main">
+          <span class="t-org" data-ko="삼성물산 (EPC 관리조직)" data-en="Samsung C&amp;T (EPC management)">삼성물산 (EPC 관리조직)</span>
+          <span class="t-course" data-ko="생성형 AI 기반 업무 자동화 실습" data-en="Hands-on Work Automation with Generative AI">생성형 AI 기반 업무 자동화 실습</span>
+          <span class="t-target" data-ko="20명 · 3기수 · 48시간" data-en="20 participants · 3 cohorts · 48 hrs">20명 · 3기수 · 48시간</span>
+        </div>
+        <span class="badge badge--coach" data-ko="실습코치" data-en="Coach">실습코치</span>
+      </div>
+
+      <div class="t-row">
+        <div class="t-period">2026.06 – 08</div>
+        <div class="t-main">
+          <span class="t-org" data-ko="S사 (전 계열사)" data-en="S Company (all affiliates)">S사 (전 계열사)</span>
+          <span class="t-course" data-ko="생성형 AI 이해 및 실무 활용" data-en="Generative AI: Foundations &amp; Practice">생성형 AI 이해 및 실무 활용</span>
+          <span class="t-target" data-ko="고위 임원·사장단 포함 · 회당 40~80명 · 17일 94시간" data-en="Incl. senior executives &amp; presidents · 40–80 per session · 17 days, 94 hrs">고위 임원·사장단 포함 · 회당 40~80명 · 17일 94시간</span>
+        </div>
+        <span class="badge badge--coach" data-ko="실습코치" data-en="Coach">실습코치</span>
+      </div>
+
+      <div class="t-row">
+        <div class="t-period">2026.01.09</div>
+        <div class="t-main">
+          <span class="t-org" data-ko="(주)로지션" data-en="LOGISIAN Co., Ltd.">(주)로지션</span>
+          <span class="t-course" data-ko="생성형 AI 리더 워크숍" data-en="Generative AI Leadership Workshop">생성형 AI 리더 워크숍</span>
+          <span class="t-target" data-ko="CEO·COO·임원 26명 · 3시간" data-en="CEO, COO and executives (26) · 3 hrs">CEO·COO·임원 26명 · 3시간</span>
+        </div>
+        <span class="badge badge--lead" data-ko="강사" data-en="Instructor">강사</span>
+      </div>
+
+      <div class="t-row">
+        <div class="t-period">2025.04.26</div>
+        <div class="t-main">
+          <span class="t-org" data-ko="메리츠화재" data-en="Meritz Fire &amp; Marine Insurance">메리츠화재</span>
+          <span class="t-course" data-ko="생성형 AI 실무 활용" data-en="Generative AI in Practice">생성형 AI 실무 활용</span>
+          <span class="t-target" data-ko="70명 · 6시간" data-en="70 participants · 6 hrs">70명 · 6시간</span>
+        </div>
+        <span class="badge badge--coach" data-ko="실습코치" data-en="Coach">실습코치</span>
+      </div>
+
+    </div>
+
+    <div class="subgrid">
+      <div class="reveal">
+        <h3 data-ko="대학 교육" data-en="University teaching">대학 교육</h3>
+        <ul class="mini">
+          <li>
+            <b data-ko="숙명여자대학교 IT공학과 「클라우드컴퓨팅」 실습 수업" data-en="Sookmyung Women's University — Cloud Computing lab session">숙명여자대학교 IT공학과 「클라우드컴퓨팅」 실습 수업</b>
+            <span data-ko="2026.05.14 · 4학년 60명 · AWS · HTCondor" data-en="May 14, 2026 · 60 seniors · AWS · HTCondor">2026.05.14 · 4학년 60명 · AWS · HTCondor</span>
+          </li>
+          <li>
+            <b data-ko="강의조교 (2023-1 ~ 2026-2학기)" data-en="Teaching assistant (Spring 2023 – Fall 2026)">강의조교 (2023-1 ~ 2026-2학기)</b>
+            <span data-ko="사랑과헌법 · 고전의현장과스토리 · 논리적사고와소프트웨어 · AI로알아본사회과학데이터" data-en="Law &amp; Love · Classics in Context · Logical Thinking &amp; Software · Social Science Data with AI">사랑과헌법 · 고전의현장과스토리 · 논리적사고와소프트웨어 · AI로알아본사회과학데이터</span>
+          </li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <h3 data-ko="코칭·멘토링" data-en="Coaching &amp; mentoring">코칭·멘토링</h3>
+        <ul class="mini">
+          <li>
+            <b data-ko="숙명여대 인공지능공학부 IPS 멘토링 멘토 (제5·6회)" data-en="Sookmyung AI Engineering — IPS mentoring (5th &amp; 6th)">숙명여대 인공지능공학부 IPS 멘토링 멘토 (제5·6회)</b>
+          </li>
+          <li>
+            <b data-ko="국방부 × EBS 군인자녀 온라인 교육멘토링" data-en="Ministry of National Defense × EBS — online mentoring for soldiers' children">국방부 × EBS 군인자녀 온라인 교육멘토링</b>
+            <span data-ko="2024.05 ~ 2025.02" data-en="May 2024 – Feb 2025">2024.05 ~ 2025.02</span>
+          </li>
+          <li>
+            <b data-ko="숙명여대 미래교육원 — 평생교육사 실습·행정 인턴" data-en="Sookmyung Future Education Center — lifelong education practicum &amp; admin internship">숙명여대 미래교육원 — 평생교육사 실습·행정 인턴</b>
+            <span data-ko="2022.10 ~ 2023.02" data-en="Oct 2022 – Feb 2023">2022.10 ~ 2023.02</span>
+          </li>
+          <li>
+            <b data-ko="유빅스컴퓨팅 — 교안 작성" data-en="Ubix Computing — course material development">유빅스컴퓨팅 — 교안 작성</b>
+            <span data-ko="2021.10 ~ 2022.07" data-en="Oct 2021 – Jul 2022">2021.10 ~ 2022.07</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="methods reveal">
+      <div class="method">
+        <div class="n">01</div>
+        <h4 data-ko="사전 진단 → 직급·직무별 이원화" data-en="Pre-survey, then tiered design">사전 진단 → 직급·직무별 이원화</h4>
+        <p data-ko="사전 설문으로 수준과 업무를 먼저 확인하고, 부서장과 부서원의 교안을 나눠 설계합니다." data-en="A pre-training survey establishes levels and tasks; senior and staff tracks get separate materials.">사전 설문으로 수준과 업무를 먼저 확인하고, 부서장과 부서원의 교안을 나눠 설계합니다.</p>
+      </div>
+      <div class="method">
+        <div class="n">02</div>
+        <h4 data-ko="설치 없는 단일 HTML 실습" data-en="Zero-install, single-file HTML labs">설치 없는 단일 HTML 실습</h4>
+        <p data-ko="three.js 3D, 대시보드, 팀 일정관리 앱을 브라우저에서 바로 열어 완성합니다. 설치·권한 문제로 흐름이 끊기지 않습니다." data-en="3D scenes with three.js, dashboards and team schedulers opened straight in the browser — no setup, no broken flow.">three.js 3D, 대시보드, 팀 일정관리 앱을 브라우저에서 바로 열어 완성합니다. 설치·권한 문제로 흐름이 끊기지 않습니다.</p>
+      </div>
+      <div class="method">
+        <div class="n">03</div>
+        <h4 data-ko="에이전트로 끝까지 자동화" data-en="Automation from end to end">에이전트로 끝까지 자동화</h4>
+        <p data-ko="Claude Code·Claude Desktop(Skills·MCP)·Gemini Notebook으로 업무 자동화를 처음부터 끝까지 만들어 봅니다." data-en="Participants build complete workflows with Claude Code, Claude Desktop (Skills, MCP) and Gemini Notebook.">Claude Code·Claude Desktop(Skills·MCP)·Gemini Notebook으로 업무 자동화를 처음부터 끝까지 만들어 봅니다.</p>
+      </div>
+      <div class="method">
+        <div class="n">04</div>
+        <h4 data-ko="공유·복습·해커톤" data-en="Share, review, hack">공유·복습·해커톤</h4>
+        <p data-ko="패들렛·카훗·조별 투표로 결과를 공유하고 복습하며, 해커톤 형식으로 하루를 마무리합니다." data-en="Padlet, Kahoot and team voting keep results visible; hackathon formats close the day.">패들렛·카훗·조별 투표로 결과를 공유하고 복습하며, 해커톤 형식으로 하루를 마무리합니다.</p>
+      </div>
+      <div class="method">
+        <div class="n">05</div>
+        <h4 data-ko="환경 체크리스트 운영" data-en="Environment checklist">환경 체크리스트 운영</h4>
+        <p data-ko="무료 계정, 로그인, 권한, 보안 설정을 사전에 점검하는 체크리스트로 현장 이슈를 줄입니다." data-en="A pre-session checklist covers free accounts, logins, permissions and security settings to prevent on-site issues.">무료 계정, 로그인, 권한, 보안 설정을 사전에 점검하는 체크리스트로 현장 이슈를 줄입니다.</p>
+      </div>
+    </div>
+
+    <div class="quotes reveal">
+      <blockquote class="quote">
+        <p data-ko="“지금까지 만난 보조강사 중 최고의 보조강사”" data-en="“The best co-instructor I have worked with so far.”">“지금까지 만난 보조강사 중 최고의 보조강사”</p>
+        <cite data-ko="주강사 피드백" data-en="Feedback from a lead instructor">주강사 피드백</cite>
+      </blockquote>
+      <blockquote class="quote">
+        <p data-ko="“잘 해준다며 프로님들이 탐냄”" data-en="“The program leads were so impressed they wanted to keep him.”">“잘 해준다며 프로님들이 탐냄”</p>
+        <cite data-ko="농협 현장 피드백" data-en="On-site feedback, NACF program">농협 현장 피드백</cite>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ================= RESEARCH ================= -->
+<section id="research">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="num-col sec-num">02</div>
+      <div>
+        <h2 class="sec-title" data-ko="연구" data-en="Research">연구</h2>
+        <p class="sec-desc" data-ko="강화학습과 대규모 언어 모델이 실제 의사결정과 제어에 쓰일 때의 한계를 다룹니다. 출판 논문 15편과 국내 특허 출원 1건이 있습니다."
+           data-en="I study what happens when reinforcement learning and large language models meet real decision-making and control. 15 published papers; one domestic patent filed.">강화학습과 대규모 언어 모델이 실제 의사결정과 제어에 쓰일 때의 한계를 다룹니다. 출판 논문 15편과 국내 특허 출원 1건이 있습니다.</p>
+      </div>
+    </div>
+
+    <div class="research-grid">
+      <div class="reveal">
+        <h3 style="font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:14px" data-ko="관심 분야" data-en="Research interests">관심 분야</h3>
+        <div class="interest-list">
+          <span data-ko="강화학습 × LLM" data-en="Reinforcement learning × LLM">강화학습 × LLM</span>
+          <span data-ko="자율주행 · AMR 제어" data-en="Autonomous driving &amp; AMR control">자율주행 · AMR 제어</span>
+          <span data-ko="연합학습" data-en="Federated learning">연합학습</span>
+          <span data-ko="Offline-RL 기반 의료 의사결정" data-en="Offline RL for clinical decision-making">Offline-RL 기반 의료 의사결정</span>
+          <span data-ko="Agentic AI" data-en="Agentic AI">Agentic AI</span>
+          <span data-ko="LLM 벤치마크" data-en="LLM benchmarks">LLM 벤치마크</span>
+        </div>
+      </div>
+      <div class="reveal">
+        <h3 style="font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:14px" data-ko="연구 경험" data-en="Research experience">연구 경험</h3>
+        <ul class="mini">
+          <li>
+            <b data-ko="UC Davis Tagkopoulos Lab — 국제 공동연수 (BK21)" data-en="UC Davis, Tagkopoulos Lab — international research training (BK21)">UC Davis Tagkopoulos Lab — 국제 공동연수 (BK21)</b>
+            <span data-ko="2025.07 ~ 08 · 미국" data-en="Jul – Aug 2025 · USA">2025.07 ~ 08 · 미국</span>
+          </li>
+          <li>
+            <b data-ko="789 Labs LLC (미국) — LLM Keygen 알고리즘 벤치마크" data-en="789 Labs LLC (USA) — LLM keygen algorithm benchmark">789 Labs LLC (미국) — LLM Keygen 알고리즘 벤치마크</b>
+            <span data-ko="2026.03 ~ 06" data-en="Mar – Jun 2026">2026.03 ~ 06</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="patent reveal">
+      <div class="ic" aria-hidden="true">◈</div>
+      <div>
+        <b data-ko="국내 특허 출원 1건 (2025.10)" data-en="One domestic patent filed (Oct 2025)">국내 특허 출원 1건 (2025.10)</b>
+        <span data-ko="기술 내용은 출원 절차에 따라 요약 수준으로만 표기합니다." data-en="Details are kept at summary level while the application is in process.">기술 내용은 출원 절차에 따라 요약 수준으로만 표기합니다.</span>
+      </div>
+    </div>
+
+    <div class="papers">
+      <h3 style="font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:18px" data-ko="대표 논문" data-en="Selected papers">대표 논문</h3>
+      <div class="papers-grid">
+
+        <article class="paper featured">
+          <div class="p-meta"><span class="p-venue">KIPS Transactions (KTSDE)</span><span>2024.08</span></div>
+          <h4 class="p-title" data-ko="추천 시스템에서의 선형 모델과 비선형 모델의 성능 비교 연구" data-en="Study Comparing the Performance of Linear and Non-linear Models in Recommendation Systems">추천 시스템에서의 선형 모델과 비선형 모델의 성능 비교 연구</h4>
+          <div class="p-vol" data-ko="Vol. 13, No. 8, pp. 388–394" data-en="Vol. 13, No. 8, pp. 388–394">Vol. 13, No. 8, pp. 388–394</div>
+          <a class="p-link" href="https://doi.org/10.3745/TKIPS.2024.13.8.388" target="_blank" rel="noopener">DOI 10.3745/TKIPS.2024.13.8.388</a>
+        </article>
+
+        <article class="paper featured">
+          <div class="p-meta"><span class="p-venue">CMES · SCI</span><span>2025.12</span></div>
+          <h4 class="p-title">Explore Advanced Hybrid Deep-Learning for Enhanced Wireless Signal Detection in 5G OFDM Systems</h4>
+          <div class="p-vol" data-ko="Computer Modeling in Engineering &amp; Sciences" data-en="Computer Modeling in Engineering &amp; Sciences">Computer Modeling in Engineering &amp; Sciences</div>
+          <a class="p-link" href="https://doi.org/10.32604/cmes.2025.073871" target="_blank" rel="noopener">DOI 10.32604/cmes.2025.073871</a>
+        </article>
+
+        <article class="paper featured">
+          <div class="p-meta"><span class="p-venue">ACK 2025 · KIPS</span><span>2025.11</span></div>
+          <h4 class="p-title" data-ko="자율 이동 로봇 제어를 위한 강화학습-대규모 언어 모델 통합" data-en="Reinforcement Learning–Large Language Model Integration for Autonomous Mobile Robot Control">자율 이동 로봇 제어를 위한 강화학습-대규모 언어 모델 통합</h4>
+          <div class="p-vol" data-ko="Vol. 32, No. 2, pp. 825–828" data-en="Vol. 32, No. 2, pp. 825–828">Vol. 32, No. 2, pp. 825–828</div>
+          <a class="p-link" href="https://doi.org/10.3745/PKIPS.y2025m11a.825" target="_blank" rel="noopener">DOI 10.3745/PKIPS.y2025m11a.825</a>
+        </article>
+
+        <article class="paper featured">
+          <div class="p-meta"><span class="p-venue">ACK 2025 · KIPS</span><span>2025.11</span></div>
+          <h4 class="p-title" data-ko="Offline-RL 기반 패혈증 치료 연구의 한계와 재현성·안전성·일반화를 위한 체크리스트" data-en="Limitations of Offline-RL-Based Sepsis Treatment Research and Checklist for Reproducibility, Safety, and Generalization">Offline-RL 기반 패혈증 치료 연구의 한계와 재현성·안전성·일반화를 위한 체크리스트</h4>
+          <div class="p-vol" data-ko="Vol. 32, No. 2, pp. 821–824" data-en="Vol. 32, No. 2, pp. 821–824">Vol. 32, No. 2, pp. 821–824</div>
+          <a class="p-link" href="https://doi.org/10.3745/PKIPS.y2025m11a.821" target="_blank" rel="noopener">DOI 10.3745/PKIPS.y2025m11a.821</a>
+        </article>
+
+        <article class="paper featured">
+          <div class="p-meta"><span class="p-venue">ASK 2026 · KIPS</span><span>2026.05</span></div>
+          <h4 class="p-title" data-ko="소프트웨어 역공학에서의 Agentic AI의 과제와 발전 방향" data-en="Challenges and Directions for Agentic AI in Software Reverse Engineering">소프트웨어 역공학에서의 Agentic AI의 과제와 발전 방향</h4>
+          <div class="p-vol" data-ko="Vol. 33, No. 1, pp. 175–178" data-en="Vol. 33, No. 1, pp. 175–178">Vol. 33, No. 1, pp. 175–178</div>
+          <a class="p-link" href="https://www.manuscriptlink.com/society/kips/conference/ask2026/programBook/presentation/pdf/oral/KIPS_C2026A0122" target="_blank" rel="noopener" data-ko="발표 자료 보기" data-en="View presentation">발표 자료 보기</a>
+        </article>
+
+      </div>
+
+      <details class="all">
+        <summary><span data-ko="전체 논문 15편 보기" data-en="All 15 published papers">전체 논문 15편 보기</span></summary>
+        <div class="all-body">
+
+          <div class="all-item"><div class="yr">2026.05</div><div><div class="tt" data-ko="소프트웨어 역공학에서의 Agentic AI의 과제와 발전 방향" data-en="Challenges and Directions for Agentic AI in Software Reverse Engineering">소프트웨어 역공학에서의 Agentic AI의 과제와 발전 방향</div><div class="vv">ASK 2026 · Vol. 33, No. 1, pp. 175–178 · <a href="https://www.manuscriptlink.com/society/kips/conference/ask2026/programBook/presentation/pdf/oral/KIPS_C2026A0122" target="_blank" rel="noopener">Program</a></div></div></div>
+
+          <div class="all-item"><div class="yr">2025.12</div><div><div class="tt">Explore Advanced Hybrid Deep-Learning for Enhanced Wireless Signal Detection in 5G OFDM Systems</div><div class="vv">CMES · SCI · <a href="https://doi.org/10.32604/cmes.2025.073871" target="_blank" rel="noopener">DOI</a></div></div></div>
+
+          <div class="all-item"><div class="yr">2025.11</div><div><div class="tt" data-ko="자율 이동 로봇 제어를 위한 강화학습-대규모 언어 모델 통합" data-en="Reinforcement Learning–Large Language Model Integration for Autonomous Mobile Robot Control">자율 이동 로봇 제어를 위한 강화학습-대규모 언어 모델 통합</div><div class="vv">ACK 2025 · Vol. 32, No. 2, pp. 825–828 · <a href="https://doi.org/10.3745/PKIPS.y2025m11a.825" target="_blank" rel="noopener">DOI</a></div></div></div>
+
+          <div class="all-item"><div class="yr">2025.11</div><div><div class="tt" data-ko="Offline-RL 기반 패혈증 치료 연구의 한계와 재현성·안전성·일반화를 위한 체크리스트" data-en="Limitations of Offline-RL-Based Sepsis Treatment Research and Checklist for Reproducibility, Safety, and Generalization">Offline-RL 기반 패혈증 치료 연구의 한계와 재현성·안전성·일반화를 위한 체크리스트</div><div class="vv">ACK 2025 · Vol. 32, No. 2, pp. 821–824 · <a href="https://doi.org/10.3745/PKIPS.y2025m11a.821" target="_blank" rel="noopener">DOI</a></div></div></div>
+
+          <div class="all-item"><div class="yr">2025.07</div><div><div class="tt" data-ko="강화학습 기반 AMR 시스템에서의 정책 해석 가능성과 XRL 기술 동향" data-en="Policy Interpretability in Reinforcement Learning-Driven AMR Systems and Recent Advances in XRL Technologies">강화학습 기반 AMR 시스템에서의 정책 해석 가능성과 XRL 기술 동향</div><div class="vv">KCC 2025 · KIISE · pp. 1,297–1,299 · <a href="https://www.kiise.or.kr/conference/kcc/2025/" target="_blank" rel="noopener">Program</a></div></div></div>
+
+          <div class="all-item"><div class="yr">2025.05</div><div><div class="tt" data-ko="엣지 디바이스에서의 실시간 방범 시스템을 위한 객체 탐지와 상황 설명 언어 모델 분석" data-en="An Analysis of Object Detection and Context Description Language Models for Real-time Security Systems on Edge Devices">엣지 디바이스에서의 실시간 방범 시스템을 위한 객체 탐지와 상황 설명 언어 모델 분석</div><div class="vv">ASK 2025 · Vol. 32, No. 1, pp. 610–613 · <a href="https://doi.org/10.3745/PKIPS.y2025m05a.610" target="_blank" rel="noopener">DOI</a></div></div></div>
+
+          <div class="all-item"><div class="yr">2025.05</div><div><div class="tt" data-ko="자율 이동 로봇 연구에서의 강화학습 및 대형 언어 모델의 적용 가능성 탐색" data-en="A Study on the Application of Reinforcement Learning and Large Language Models to Autonomous Mobile Robots">자율 이동 로봇 연구에서의 강화학습 및 대형 언어 모델의 적용 가능성 탐색</div><div class="vv">ASK 2025 · Vol. 32, No. 1, pp. 622–625 · <a href="https://doi.org/10.3745/PKIPS.y2025m05a.622" target="_blank" rel="noopener">DOI</a></div></div></div>
+
+          <div class="all-item"><div class="yr">2025.05</div><div><div class="tt" data-ko="그래프 신경망을 활용한 교차로 동적 군집화 기반 적응형 네트워크 분할 기법 분석" data-en="An Analysis of Adaptive Network Partitioning Based on Dynamic Intersection Clustering Using Graph Neural Networks">그래프 신경망을 활용한 교차로 동적 군집화 기반 적응형 네트워크 분할 기법 분석</div><div class="vv">KMMS 2025 · Vol. 28, No. 1 · <a href="https://kmms.or.kr/conference/2025sp" target="_blank" rel="noopener">Program</a></div></div></div>
+
+          <div class="all-item"><div class="yr">2024.11</div><div><div class="tt" data-ko="압전센서 기반 보행자 수 및 이동방향 감지기법 분석" data-en="An Analysis of Pedestrian Counting and Movement Direction Detection Methods Based on Piezoelectric Sensors">압전센서 기반 보행자 수 및 이동방향 감지기법 분석</div><div class="vv">KMMS 2024 · Vol. 27, No. 2 · <a href="https://kmms.or.kr/conference/2024aut" target="_blank" rel="noopener">Program</a></div></div></div>
+
+          <div class="all-item"><div class="yr">2024.10</div><div><div class="tt" data-ko="암 유전체 데이터 처리 및 다중 분류 모델에 따른 성능 비교 연구" data-en="Performance Comparison of Multiple Classification Models for Cancer Genomic Data Processing">암 유전체 데이터 처리 및 다중 분류 모델에 따른 성능 비교 연구</div><div class="vv">ACK 2024 · Vol. 31, No. 2, pp. 723–726 · <a href="https://doi.org/10.3745/PKIPS.y2024m10a.723" target="_blank" rel="noopener">DOI</a></div></div></div>
+
+          <div class="all-item"><div class="yr">2024.08</div><div><div class="tt" data-ko="추천 시스템에서의 선형 모델과 비선형 모델의 성능 비교 연구" data-en="Study Comparing the Performance of Linear and Non-linear Models in Recommendation Systems">추천 시스템에서의 선형 모델과 비선형 모델의 성능 비교 연구</div><div class="vv">KIPS Transactions (KTSDE) · Vol. 13, No. 8, pp. 388–394 · <a href="https://doi.org/10.3745/TKIPS.2024.13.8.388" target="_blank" rel="noopener">DOI</a></div></div></div>
+
+          <div class="all-item"><div class="yr">2024.05</div><div><div class="tt" data-ko="추천 시스템에서의 선형 모델과 딥러닝 모델의 데이터 크기에 따른 성능 비교 연구" data-en="A Study Comparing the Performance of Linear and Deep Learning Models in Recommender Systems as a Function of Data Size">추천 시스템에서의 선형 모델과 딥러닝 모델의 데이터 크기에 따른 성능 비교 연구</div><div class="vv">ASK 2024 · Vol. 31, No. 1, pp. 715–718 · <a href="https://doi.org/10.3745/PKIPS.y2024m05a.715" target="_blank" rel="noopener">DOI</a></div></div></div>
+
+          <div class="all-item"><div class="yr">2024.01</div><div><div class="tt">A Study on the Impact of CTGAN-Based Data Augmentation on SASRec Performance</div><div class="vv">KJCCS 2024 · <a href="https://sites.google.com/view/kjccs2024/home" target="_blank" rel="noopener">Program</a></div></div></div>
+
+          <div class="all-item"><div class="yr">2023.11</div><div><div class="tt" data-ko="CTGAN 기반 데이터 증강 비율 최적화 연구" data-en="A Study on the Optimization of Data Augmentation Ratio using CTGAN">CTGAN 기반 데이터 증강 비율 최적화 연구</div><div class="vv">ACK 2023 · Vol. 30, No. 2, pp. 327–330 · <a href="https://doi.org/10.3745/PKIPS.y2023m11a.327" target="_blank" rel="noopener">DOI</a></div></div></div>
+
+          <div class="all-item"><div class="yr">2023.05</div><div><div class="tt" data-ko="하이퍼파라미터 최적화를 통한 SASRec 추천 모델 성능 개선 연구" data-en="A Study on the Performance Improvement of the SASRec Recommendation Model by Optimizing the Hyperparameters">하이퍼파라미터 최적화를 통한 SASRec 추천 모델 성능 개선 연구</div><div class="vv">ASK 2023 · Vol. 30, No. 1, pp. 657–659 · <a href="https://doi.org/10.3745/PKIPS.y2023m05a.657" target="_blank" rel="noopener">DOI</a></div></div></div>
+
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROJECTS ================= -->
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="num-col sec-num">03</div>
+      <div>
+        <h2 class="sec-title" data-ko="프로젝트 · 수상" data-en="Projects &amp; Awards">프로젝트 · 수상</h2>
+        <p class="sec-desc" data-ko="교육과 연구에서 출발한 도구와 서비스, 그리고 그 과정에서 받은 평가입니다." data-en="Tools and services that grew out of teaching and research, and the recognition they earned.">교육과 연구에서 출발한 도구와 서비스, 그리고 그 과정에서 받은 평가입니다.</p>
+      </div>
+    </div>
+
+    <div class="projects reveal">
+      <article class="project">
+        <div class="tag">Product · 2025–</div>
+        <h3 data-ko="논도어 (NonDoor)" data-en="NonDoor">논도어 (NonDoor)</h3>
+        <p data-ko="‘논문으로 가는 문, 원문을 피하지 않는 읽기’. 정리노트·영문 번역·질문·내용 흐름과 출처 보기를 한 화면에 모은 논문 읽기 작업공간으로, 논문 1편을 이해하는 시간을 3일에서 1시간으로 줄이는 것을 목표로 합니다. 특허·실용신안 출원을 진행 중입니다."
+           data-en="“A door into papers, not an escape from the original text.” A reading workspace that keeps notes, translation, questions, and source navigation in one place — built to cut the time to understand a paper from three days to an hour. Patent and utility model applications are in process.">‘논문으로 가는 문, 원문을 피하지 않는 읽기’. 정리노트·영문 번역·질문·내용 흐름과 출처 보기를 한 화면에 모은 논문 읽기 작업공간으로, 논문 1편을 이해하는 시간을 3일에서 1시간으로 줄이는 것을 목표로 합니다. 특허·실용신안 출원을 진행 중입니다.</p>
+        <div class="plinks">
+          <a href="https://youtu.be/O6qHE1ED6Mk" target="_blank" rel="noopener" data-ko="프로토타입 데모 영상" data-en="Prototype demo video">프로토타입 데모 영상</a>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="tag">Web · 2026.08</div>
+        <h3 data-ko="FIART 홈페이지" data-en="FIART website">FIART 홈페이지</h3>
+        <p data-ko="기업 홈페이지를 구축하고 Netlify로 배포했으며, 이후 운영을 넘겨받을 수 있도록 유지보수 절차를 문서로 인수인계했습니다."
+           data-en="Built a company website, deployed it on Netlify, and handed over documented maintenance procedures for ongoing operation.">기업 홈페이지를 구축하고 Netlify로 배포했으며, 이후 운영을 넘겨받을 수 있도록 유지보수 절차를 문서로 인수인계했습니다.</p>
+      </article>
+
+      <article class="project">
+        <div class="tag">Courseware · 2026</div>
+        <h3 data-ko="설치 없는 실습 콘텐츠" data-en="Zero-install lab content">설치 없는 실습 콘텐츠</h3>
+        <p data-ko="강의 현장에서 바로 열리는 단일 HTML 실습물을 직접 제작합니다. three.js 3D 장면, 데이터 대시보드, 팀 일정관리 앱 등을 교안에 맞춰 만들어 왔습니다."
+           data-en="I build single-file HTML labs that open straight in the classroom: three.js 3D scenes, data dashboards and team schedulers, tailored to each course.">강의 현장에서 바로 열리는 단일 HTML 실습물을 직접 제작합니다. three.js 3D 장면, 데이터 대시보드, 팀 일정관리 앱 등을 교안에 맞춰 만들어 왔습니다.</p>
+      </article>
+    </div>
+
+    <div class="awards">
+      <div class="reveal">
+        <h3 style="font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:12px" data-ko="수상" data-en="Awards">수상</h3>
+        <ul class="award-list">
+          <li><span class="y">2025.05</span><span><b data-ko="ASK 2025 우수논문상" data-en="Best Paper Award, ASK 2025">ASK 2025 우수논문상</b> — <span data-ko="한국정보처리학회" data-en="Korea Information Processing Society">한국정보처리학회</span></span></li>
+          <li><span class="y">2024.09</span><span><b data-ko="2024 AI PC 이미지 인식 및 생성형 AI 해커톤 3등" data-en="3rd place, 2024 AI PC Image Recognition &amp; Generative AI Hackathon">2024 AI PC 이미지 인식 및 생성형 AI 해커톤 3등</b> — <span data-ko="Intel · HP · Gmarket" data-en="Intel · HP · Gmarket">Intel · HP · Gmarket</span></span></li>
+          <li><span class="y">2022</span><span><b data-ko="숙명여자대학교 졸업성적우수상" data-en="Graduation Honors, Sookmyung Women's University">숙명여자대학교 졸업성적우수상</b></span></li>
+          <li><span class="y">2022.01</span><span><b data-ko="공학계열 SMHM 캡스톤디자인 경진대회 최우수상" data-en="Grand Prize, SMHM Capstone Design Competition (Engineering)">공학계열 SMHM 캡스톤디자인 경진대회 최우수상</b></span></li>
+          <li><span class="y">2019.11</span><span><b data-ko="숙명 Citizenship Fair 최우수상" data-en="Grand Prize, Sookmyung Citizenship Fair">숙명 Citizenship Fair 최우수상</b></span></li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <h3 style="font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:12px" data-ko="자격 · 선정" data-en="Credentials">자격 · 선정</h3>
+        <ul class="award-list">
+          <li><span class="y">2023.03</span><span><b data-ko="평생교육사 2급" data-en="Lifelong Education Professional, Level 2">평생교육사 2급</b> — <span data-ko="교육부장관" data-en="Minister of Education">교육부장관</span></span></li>
+          <li><span class="y">2023.03–</span><span><b data-ko="과기정통부 ICT혁신인재 4.0" data-en="ICT Innovative Talent 4.0">과기정통부 ICT혁신인재 4.0</b> — <span data-ko="과학기술정보통신부" data-en="Ministry of Science and ICT">과학기술정보통신부</span></span></li>
+          <li><span class="y">2023.03–</span><span><b data-ko="교육부·NRF 4단계 BK21" data-en="BK21 FOUR (Ministry of Education, NRF)">교육부·NRF 4단계 BK21</b></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SKILLS & CONTACT ================= -->
+<section id="contact">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="num-col sec-num">04</div>
+      <div>
+        <h2 class="sec-title" data-ko="스킬 · 연락" data-en="Skills &amp; Contact">스킬 · 연락</h2>
+      </div>
+    </div>
+
+    <div class="skills reveal">
+      <div class="skill">
+        <h4 data-ko="생성형 AI · 에이전트" data-en="Generative AI &amp; Agents">생성형 AI · 에이전트</h4>
+        <ul>
+          <li>ChatGPT</li>
+          <li>Claude Code · Claude Desktop (Skills, MCP)</li>
+          <li>Gemini · Gemini Notebook</li>
+          <li data-ko="웍스AI · Google Workspace" data-en="Wrks AI · Google Workspace">웍스AI · Google Workspace</li>
+        </ul>
+      </div>
+      <div class="skill">
+        <h4 data-ko="AI 개발" data-en="AI development">AI 개발</h4>
+        <ul>
+          <li data-ko="프롬프트 엔지니어링" data-en="Prompt engineering">프롬프트 엔지니어링</li>
+          <li data-ko="에이전트 워크플로 · 멀티 에이전트" data-en="Agent workflows · multi-agent">에이전트 워크플로 · 멀티 에이전트</li>
+          <li data-ko="LLM 벤치마크" data-en="LLM benchmarking">LLM 벤치마크</li>
+        </ul>
+      </div>
+      <div class="skill">
+        <h4 data-ko="프로그래밍 · 클라우드" data-en="Programming &amp; Cloud">프로그래밍 · 클라우드</h4>
+        <ul>
+          <li>Python · Java · C/C++</li>
+          <li>HTML/CSS/JS</li>
+          <li>AWS · HTCondor · Azure</li>
+        </ul>
+      </div>
+      <div class="skill">
+        <h4 data-ko="교육 · 디자인" data-en="Education &amp; Design">교육 · 디자인</h4>
+        <ul>
+          <li>PPT · Canva · Figma</li>
+          <li>Padlet · Kahoot</li>
+          <li>Photoshop · Premiere Pro</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="contact reveal">
+      <div>
+        <h2 data-ko="교육과 협업을 이야기해요" data-en="Let's talk about teaching">교육과 협업을 이야기해요</h2>
+        <p data-ko="기업·기관 AI 교육, 커리큘럼 설계, 교안 개발, 공동 연구 제안 모두 환영합니다. 필요하신 내용과 일정을 적어 보내주시면 빠르게 회신드리겠습니다."
+           data-en="Corporate AI training, curriculum design, courseware development and research collaboration — all welcome. Send what you need and your timeline, and I'll reply promptly.">기업·기관 AI 교육, 커리큘럼 설계, 교안 개발, 공동 연구 제안 모두 환영합니다. 필요하신 내용과 일정을 적어 보내주시면 빠르게 회신드리겠습니다.</p>
+      </div>
+      <div class="links">
+        <a class="c-link" href="mailto:ekgns324@sookmyung.ac.kr">
+          <span><span class="lbl">Email</span>ekgns324@sookmyung.ac.kr</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+        </a>
+        <a class="c-link" href="https://www.linkedin.com/in/dahunseong0324" target="_blank" rel="noopener">
+          <span><span class="lbl">LinkedIn</span>in/dahunseong0324</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot-inner">
+    <span>© 2026 <span data-ko="성다훈" data-en="Da-Hun Seong">성다훈</span> · <span data-ko="AI 교육 · 연구" data-en="AI Education · Research">AI 교육 · 연구</span></span>
+    <span data-ko="최종 업데이트 2026.11" data-en="Last updated November 2026">최종 업데이트 2026.11</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  function setLang(lang){
+    root.lang = lang;
+    var nodes = document.querySelectorAll('[data-ko]');
+    for (var i=0;i<nodes.length;i++){
+      var v = nodes[i].getAttribute('data-' + lang);
+      if (v !== null) nodes[i].textContent = v;
+    }
+    var ko = document.getElementById('btn-ko'), en = document.getElementById('btn-en');
+    if (ko && en){
+      ko.setAttribute('aria-pressed', lang === 'ko' ? 'true' : 'false');
+      en.setAttribute('aria-pressed', lang === 'en' ? 'true' : 'false');
+    }
+    document.title = lang === 'ko'
+      ? '성다훈 — AI 교육 · 연구 포트폴리오'
+      : 'Da-Hun Seong — AI Education & Research';
+    var desc = document.getElementById('meta-desc');
+    if (desc) desc.setAttribute('content', lang === 'ko'
+      ? '생성형 AI 교육 전문가 성다훈의 포트폴리오. 기업·기관 AI 교육, AI 에이전트 실습, 강화학습·LLM 연구와 논문, 프로젝트.'
+      : 'Portfolio of Da-Hun Seong, a generative AI education specialist: corporate and institutional AI training, AI agent workshops, and reinforcement learning / LLM research.');
+    try { localStorage.setItem('lang', lang); } catch(e){}
+  }
+  window.setLang = setLang;
+
+  var saved = null;
+  try { saved = localStorage.getItem('lang'); } catch(e){}
+  var q = null;
+  try { q = new URLSearchParams(location.search).get('lang'); } catch(e){}
+  if (q === 'ko' || q === 'en') {
+    saved = q;
+  } else if (!saved) {
+    var nav = (navigator.language || 'ko').toLowerCase();
+    saved = nav.indexOf('ko') === 0 ? 'ko' : (nav ? 'en' : 'ko');
+  }
+  if (saved === 'en') setLang('en'); else setLang('ko');
+
+  // reveal on scroll
+  var els = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, {rootMargin: '0px 0px -8% 0px', threshold: 0.06});
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('in'); });
+  }
+})();
+</script>
+</body>
+</html>
